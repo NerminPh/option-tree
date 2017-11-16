@@ -320,7 +320,7 @@ The most likely scenario is your theme already has OptionTree installed in Theme
 * Added filter 'ot_type_radio_image_src' which allows the Radio Image option type source URI to be changed. Contributors via github @bitcommit.
 
 = 2.2.3 =
-* Hotfix - Allow empty condition values. For example, `field_id:is()` or `field_id:not()` would now be valid syntax.
+* Hotfix - Allow empty condition values. For example, `field_id:is()` or `field_id:off()` would now be valid syntax.
 * Hotfix - Fixed a bug in the `init_upload_fix` JavaScript method.
 * Hotfix - Fixed a bug in the `url_exists` javaScript method. The code will no longer will check if a URL exists on another domain.
 
@@ -500,7 +500,7 @@ The most likely scenario is your theme already has OptionTree installed in Theme
 * Fix a typo in the slider array where textarea's were not saving the first time due to an incorrect array key.
 
 = 2.0.3 =
-* Had an incorrect conditional statement causing an issue where the plugin was attempting to create the 'option-tree' image attachment page, even though it was already created.
+* Had an incorrect conditional statement causing an issue where the plugin was attempting to create the 'karisma_text_domain' image attachment page, even though it was already created.
 * The above also fixed a conflict with 'The Events Calendar' plugin.
 
 = 2.0.2 =
@@ -537,7 +537,7 @@ The most likely scenario is your theme already has OptionTree installed in Theme
 * Added Background option type.
 * Added Typography option type.
 * Added CSS option type.
-* Better looking selects with 1=Yes,2=No where '1' is the value and 'Yes' is the text in the select.
+* Better looking selects with 1=Yes,2=No where '1' is the value and 'on' is the text in the select.
 * Made the AJAX message CSS more prominent.
 * functions.load.php will now only load option type functions if viewing an OT admin page.
 * Deregistered the custom jQuery UI in the 'Cispm Mail Contact' plugin when viewing an OptionTree page.

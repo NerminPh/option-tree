@@ -43,7 +43,7 @@ if ( ! function_exists( 'ot_display_by_type' ) ) {
     if ( function_exists( $function_name_by_type ) ) {
       call_user_func( $function_name_by_type, $args );
     } else {
-      echo '<p>' . __( 'Sorry, this function does not exist', 'option-tree' ) . '</p>';
+      echo '<p>' . __( 'Sorry, this function does not exist', 'karisma_text_domain' ) . '</p>';
     }
     
   }
@@ -131,7 +131,7 @@ if ( ! function_exists( 'ot_type_background' ) ) {
             
             echo '<select name="' . esc_attr( $field_name ) . '[background-repeat]" id="' . esc_attr( $field_id ) . '-repeat" class="option-tree-ui-select ' . esc_attr( $field_class ) . '">';
               
-              echo '<option value="">' . __( 'background-repeat', 'option-tree' ) . '</option>';
+              echo '<option value="">' . __( 'background-repeat', 'karisma_text_domain' ) . '</option>';
               foreach ( ot_recognized_background_repeat( $field_id ) as $key => $value ) {
               
                 echo '<option value="' . esc_attr( $key ) . '" ' . selected( $background_repeat, $key, false ) . '>' . esc_attr( $value ) . '</option>';
@@ -149,7 +149,7 @@ if ( ! function_exists( 'ot_type_background' ) ) {
             
             echo '<select name="' . esc_attr( $field_name ) . '[background-attachment]" id="' . esc_attr( $field_id ) . '-attachment" class="option-tree-ui-select ' . $field_class . '">';
               
-              echo '<option value="">' . __( 'background-attachment', 'option-tree' ) . '</option>';
+              echo '<option value="">' . __( 'background-attachment', 'karisma_text_domain' ) . '</option>';
               
               foreach ( ot_recognized_background_attachment( $field_id ) as $key => $value ) {
               
@@ -168,7 +168,7 @@ if ( ! function_exists( 'ot_type_background' ) ) {
             
             echo '<select name="' . esc_attr( $field_name ) . '[background-position]" id="' . esc_attr( $field_id ) . '-position" class="option-tree-ui-select ' . esc_attr( $field_class ) . '">';
               
-              echo '<option value="">' . __( 'background-position', 'option-tree' ) . '</option>';
+              echo '<option value="">' . __( 'background-position', 'karisma_text_domain' ) . '</option>';
               
               foreach ( ot_recognized_background_position( $field_id ) as $key => $value ) {
                 
@@ -221,7 +221,7 @@ if ( ! function_exists( 'ot_type_background' ) ) {
             
             } else {
             
-              echo '<input type="text" name="' . esc_attr( $field_name ) . '[background-size]" id="' . esc_attr( $field_id ) . '-size" value="' . ( isset( $field_value['background-size'] ) ? esc_attr( $field_value['background-size'] ) : '' ) . '" class="widefat ot-background-size-input option-tree-ui-input ' . esc_attr( $field_class ) . '" placeholder="' . __( 'background-size', 'option-tree' ) . '" />';
+              echo '<input type="text" name="' . esc_attr( $field_name ) . '[background-size]" id="' . esc_attr( $field_id ) . '-size" value="' . ( isset( $field_value['background-size'] ) ? esc_attr( $field_value['background-size'] ) : '' ) . '" class="widefat ot-background-size-input option-tree-ui-input ' . esc_attr( $field_class ) . '" placeholder="' . __( 'background-size', 'karisma_text_domain' ) . '" />';
               
             }
           
@@ -235,10 +235,10 @@ if ( ! function_exists( 'ot_type_background' ) ) {
           echo '<div class="option-tree-ui-upload-parent">';
             
             /* input */
-            echo '<input type="text" name="' . esc_attr( $field_name ) . '[background-image]" id="' . esc_attr( $field_id ) . '" value="' . ( isset( $field_value['background-image'] ) ? esc_attr( $field_value['background-image'] ) : '' ) . '" class="widefat option-tree-ui-upload-input ' . esc_attr( $field_class ) . '" placeholder="' . __( 'background-image', 'option-tree' ) . '" />';
+            echo '<input type="text" name="' . esc_attr( $field_name ) . '[background-image]" id="' . esc_attr( $field_id ) . '" value="' . ( isset( $field_value['background-image'] ) ? esc_attr( $field_value['background-image'] ) : '' ) . '" class="widefat option-tree-ui-upload-input ' . esc_attr( $field_class ) . '" placeholder="' . __( 'background-image', 'karisma_text_domain' ) . '" />';
             
             /* add media button */
-            echo '<a href="javascript:void(0);" class="ot_upload_media option-tree-ui-button button button-primary light" rel="' . $post_id . '" title="' . __( 'Add Media', 'option-tree' ) . '"><span class="icon ot-icon-plus-circle"></span>' . __( 'Add Media', 'option-tree' ) . '</a>';
+            echo '<a href="javascript:void(0);" class="ot_upload_media option-tree-ui-button button button-primary light" rel="' . $post_id . '" title="' . __( 'Add Media', 'karisma_text_domain' ) . '"><span class="icon ot-icon-plus-circle"></span>' . __( 'Add Media', 'karisma_text_domain' ) . '</a>';
           
           echo '</div>';
           
@@ -254,7 +254,7 @@ if ( ! function_exists( 'ot_type_background' ) ) {
               if ( preg_match( '/\.(?:jpe?g|png|gif|ico)$/i', $field_value['background-image'] ) )
                 echo '<div class="option-tree-ui-image-wrap"><img src="' . esc_url( $field_value['background-image'] ) . '" alt="" /></div>';
               
-              echo '<a href="javascript:(void);" class="option-tree-ui-remove-media option-tree-ui-button button button-secondary light" title="' . __( 'Remove Media', 'option-tree' ) . '"><span class="icon ot-icon-minus-circle"></span>' . __( 'Remove Media', 'option-tree' ) . '</a>';
+              echo '<a href="javascript:(void);" class="option-tree-ui-remove-media option-tree-ui-button button button-secondary light" title="' . __( 'Remove Media', 'karisma_text_domain' ) . '"><span class="icon ot-icon-minus-circle"></span>' . __( 'Remove Media', 'karisma_text_domain' ) . '</a>';
               
             echo '</div>';
             
@@ -313,7 +313,7 @@ if ( ! function_exists( 'ot_type_border' ) ) {
 
           $width = isset( $field_value['width'] ) ? esc_attr( $field_value['width'] ) : '';
 
-          echo '<div class="ot-option-group ot-option-group--one-sixth"><input type="text" name="' . esc_attr( $field_name ) . '[width]" id="' . esc_attr( $field_id ) . '-width" value="' . esc_attr( $width ) . '" class="widefat option-tree-ui-input ' . esc_attr( $field_class ) . '" placeholder="' . __( 'width', 'option-tree' ) . '" /></div>';
+          echo '<div class="ot-option-group ot-option-group--one-sixth"><input type="text" name="' . esc_attr( $field_name ) . '[width]" id="' . esc_attr( $field_id ) . '-width" value="' . esc_attr( $width ) . '" class="widefat option-tree-ui-input ' . esc_attr( $field_class ) . '" placeholder="' . __( 'width', 'karisma_text_domain' ) . '" /></div>';
 
         }
 
@@ -324,7 +324,7 @@ if ( ! function_exists( 'ot_type_border' ) ) {
           
             echo '<select name="' . esc_attr( $field_name ) . '[unit]" id="' . esc_attr( $field_id ) . '-unit" class="option-tree-ui-select ' . esc_attr( $field_class ) . '">';
     
-              echo '<option value="">' . __( 'unit', 'option-tree' ) . '</option>';
+              echo '<option value="">' . __( 'unit', 'karisma_text_domain' ) . '</option>';
     
               foreach ( ot_recognized_border_unit_types( $field_id ) as $unit ) {
                 echo '<option value="' . esc_attr( $unit ) . '"' . ( isset( $field_value['unit'] ) ? selected( $field_value['unit'], $unit, false ) : '' ) . '>' . esc_attr( $unit ) . '</option>';
@@ -343,7 +343,7 @@ if ( ! function_exists( 'ot_type_border' ) ) {
           
             echo '<select name="' . esc_attr( $field_name ) . '[style]" id="' . esc_attr( $field_id ) . '-style" class="option-tree-ui-select ' . esc_attr( $field_class ) . '">';
     
-              echo '<option value="">' . __( 'style', 'option-tree' ) . '</option>';
+              echo '<option value="">' . __( 'style', 'karisma_text_domain' ) . '</option>';
     
               foreach ( ot_recognized_border_style_types( $field_id ) as $key => $style ) {
                 echo '<option value="' . esc_attr( $key ) . '"' . ( isset( $field_value['style'] ) ? selected( $field_value['style'], $key, false ) : '' ) . '>' . esc_attr( $style ) . '</option>';
@@ -436,7 +436,7 @@ if ( ! function_exists( 'ot_type_box_shadow' ) ) {
 
           $offset_x = isset( $field_value['offset-x'] ) ? esc_attr( $field_value['offset-x'] ) : '';
 
-          echo '<div class="ot-option-group ot-option-group--one-fifth"><span class="ot-icon-arrows-h ot-option-group--icon"></span><input type="text" name="' . esc_attr( $field_name ) . '[offset-x]" id="' . esc_attr( $field_id ) . '-offset-x" value="' . $offset_x . '" class="widefat option-tree-ui-input ' . esc_attr( $field_class ) . '" placeholder="' . __( 'offset-x', 'option-tree' ) . '" /></div>';
+          echo '<div class="ot-option-group ot-option-group--one-fifth"><span class="ot-icon-arrows-h ot-option-group--icon"></span><input type="text" name="' . esc_attr( $field_name ) . '[offset-x]" id="' . esc_attr( $field_id ) . '-offset-x" value="' . $offset_x . '" class="widefat option-tree-ui-input ' . esc_attr( $field_class ) . '" placeholder="' . __( 'offset-x', 'karisma_text_domain' ) . '" /></div>';
 
         }
         
@@ -445,7 +445,7 @@ if ( ! function_exists( 'ot_type_box_shadow' ) ) {
 
           $offset_y = isset( $field_value['offset-y'] ) ? esc_attr( $field_value['offset-y'] ) : '';
 
-          echo '<div class="ot-option-group ot-option-group--one-fifth"><span class="ot-icon-arrows-v ot-option-group--icon"></span><input type="text" name="' . esc_attr( $field_name ) . '[offset-y]" id="' . esc_attr( $field_id ) . '-offset-y" value="' . $offset_y . '" class="widefat option-tree-ui-input ' . esc_attr( $field_class ) . '" placeholder="' . __( 'offset-y', 'option-tree' ) . '" /></div>';
+          echo '<div class="ot-option-group ot-option-group--one-fifth"><span class="ot-icon-arrows-v ot-option-group--icon"></span><input type="text" name="' . esc_attr( $field_name ) . '[offset-y]" id="' . esc_attr( $field_id ) . '-offset-y" value="' . $offset_y . '" class="widefat option-tree-ui-input ' . esc_attr( $field_class ) . '" placeholder="' . __( 'offset-y', 'karisma_text_domain' ) . '" /></div>';
 
         }
         
@@ -454,7 +454,7 @@ if ( ! function_exists( 'ot_type_box_shadow' ) ) {
 
           $blur_radius = isset( $field_value['blur-radius'] ) ? esc_attr( $field_value['blur-radius'] ) : '';
 
-          echo '<div class="ot-option-group ot-option-group--one-fifth"><span class="ot-icon-circle ot-option-group--icon"></span><input type="text" name="' . esc_attr( $field_name ) . '[blur-radius]" id="' . esc_attr( $field_id ) . '-blur-radius" value="' . $blur_radius . '" class="widefat option-tree-ui-input ' . esc_attr( $field_class ) . '" placeholder="' . __( 'blur-radius', 'option-tree' ) . '" /></div>';
+          echo '<div class="ot-option-group ot-option-group--one-fifth"><span class="ot-icon-circle ot-option-group--icon"></span><input type="text" name="' . esc_attr( $field_name ) . '[blur-radius]" id="' . esc_attr( $field_id ) . '-blur-radius" value="' . $blur_radius . '" class="widefat option-tree-ui-input ' . esc_attr( $field_class ) . '" placeholder="' . __( 'blur-radius', 'karisma_text_domain' ) . '" /></div>';
 
         }
         
@@ -463,7 +463,7 @@ if ( ! function_exists( 'ot_type_box_shadow' ) ) {
 
           $spread_radius = isset( $field_value['spread-radius'] ) ? esc_attr( $field_value['spread-radius'] ) : '';
 
-          echo '<div class="ot-option-group ot-option-group--one-fifth"><span class="ot-icon-arrows-alt ot-option-group--icon"></span><input type="text" name="' . esc_attr( $field_name ) . '[spread-radius]" id="' . esc_attr( $field_id ) . '-spread-radius" value="' . $spread_radius . '" class="widefat option-tree-ui-input ' . esc_attr( $field_class ) . '" placeholder="' . __( 'spread-radius', 'option-tree' ) . '" /></div>';
+          echo '<div class="ot-option-group ot-option-group--one-fifth"><span class="ot-icon-arrows-alt ot-option-group--icon"></span><input type="text" name="' . esc_attr( $field_name ) . '[spread-radius]" id="' . esc_attr( $field_id ) . '-spread-radius" value="' . $spread_radius . '" class="widefat option-tree-ui-input ' . esc_attr( $field_class ) . '" placeholder="' . __( 'spread-radius', 'karisma_text_domain' ) . '" /></div>';
 
         }
         
@@ -535,7 +535,7 @@ if ( ! function_exists( 'ot_type_category_checkbox' ) ) {
             echo '</p>';
           } 
         } else {
-          echo '<p>' . __( 'No Categories Found', 'option-tree' ) . '</p>';
+          echo '<p>' . __( 'No Categories Found', 'karisma_text_domain' ) . '</p>';
         }
       
       echo '</div>';
@@ -584,12 +584,12 @@ if ( ! function_exists( 'ot_type_category_select' ) ) {
         
         /* has cats */
         if ( ! empty( $categories ) ) {
-          echo '<option value="">-- ' . __( 'Choose One', 'option-tree' ) . ' --</option>';
+          echo '<option value="">-- ' . __( 'Choose One', 'karisma_text_domain' ) . ' --</option>';
           foreach ( $categories as $category ) {
             echo '<option value="' . esc_attr( $category->term_id ) . '"' . selected( $field_value, $category->term_id, false ) . '>' . esc_attr( $category->name ) . '</option>';
           }
         } else {
-          echo '<option value="">' . __( 'No Categories Found', 'option-tree' ) . '</option>';
+          echo '<option value="">' . __( 'No Categories Found', 'karisma_text_domain' ) . '</option>';
         }
         
         echo '</select>';
@@ -815,7 +815,7 @@ if ( ! function_exists( 'ot_type_custom_post_type_checkbox' ) ) {
             echo '</p>';
           }
         } else {
-          echo '<p>' . __( 'No Posts Found', 'option-tree' ) . '</p>';
+          echo '<p>' . __( 'No Posts Found', 'karisma_text_domain' ) . '</p>';
         }
         
       echo '</div>';
@@ -867,13 +867,13 @@ if ( ! function_exists( 'ot_type_custom_post_type_select' ) ) {
         
         /* has posts */
         if ( is_array( $my_posts ) && ! empty( $my_posts ) ) {
-          echo '<option value="">-- ' . __( 'Choose One', 'option-tree' ) . ' --</option>';
+          echo '<option value="">-- ' . __( 'Choose One', 'karisma_text_domain' ) . ' --</option>';
           foreach( $my_posts as $my_post ) {
             $post_title = '' != $my_post->post_title ? $my_post->post_title : 'Untitled';
             echo '<option value="' . esc_attr( $my_post->ID ) . '"' . selected( $field_value, $my_post->ID, false ) . '>' . $post_title . '</option>';
           }
         } else {
-          echo '<option value="">' . __( 'No Posts Found', 'option-tree' ) . '</option>';
+          echo '<option value="">' . __( 'No Posts Found', 'karisma_text_domain' ) . '</option>';
         }
         
         echo '</select>';
@@ -1042,7 +1042,7 @@ if ( ! function_exists( 'ot_type_dimension' ) ) {
 
           $width = isset( $field_value['width'] ) ? esc_attr( $field_value['width'] ) : '';
 
-          echo '<div class="ot-option-group ot-option-group--one-third"><span class="ot-icon-arrows-h ot-option-group--icon"></span><input type="text" name="' . esc_attr( $field_name ) . '[width]" id="' . esc_attr( $field_id ) . '-width" value="' . esc_attr( $width ) . '" class="widefat option-tree-ui-input ' . esc_attr( $field_class ) . '" placeholder="' . __( 'width', 'option-tree' ) . '" /></div>';
+          echo '<div class="ot-option-group ot-option-group--one-third"><span class="ot-icon-arrows-h ot-option-group--icon"></span><input type="text" name="' . esc_attr( $field_name ) . '[width]" id="' . esc_attr( $field_id ) . '-width" value="' . esc_attr( $width ) . '" class="widefat option-tree-ui-input ' . esc_attr( $field_class ) . '" placeholder="' . __( 'width', 'karisma_text_domain' ) . '" /></div>';
 
         }
 
@@ -1051,7 +1051,7 @@ if ( ! function_exists( 'ot_type_dimension' ) ) {
 
           $height = isset( $field_value['height'] ) ? esc_attr( $field_value['height'] ) : '';
 
-          echo '<div class="ot-option-group ot-option-group--one-third"><span class="ot-icon-arrows-v ot-option-group--icon"></span><input type="text" name="' . esc_attr( $field_name ) . '[height]" id="' . esc_attr( $field_id ) . '-height" value="' . esc_attr( $height ) . '" class="widefat option-tree-ui-input ' . esc_attr( $field_class ) . '" placeholder="' . __( 'height', 'option-tree' ) . '" /></div>';
+          echo '<div class="ot-option-group ot-option-group--one-third"><span class="ot-icon-arrows-v ot-option-group--icon"></span><input type="text" name="' . esc_attr( $field_name ) . '[height]" id="' . esc_attr( $field_id ) . '-height" value="' . esc_attr( $height ) . '" class="widefat option-tree-ui-input ' . esc_attr( $field_class ) . '" placeholder="' . __( 'height', 'karisma_text_domain' ) . '" /></div>';
 
         }
         
@@ -1062,7 +1062,7 @@ if ( ! function_exists( 'ot_type_dimension' ) ) {
           
             echo '<select name="' . esc_attr( $field_name ) . '[unit]" id="' . esc_attr( $field_id ) . '-unit" class="option-tree-ui-select ' . esc_attr( $field_class ) . '">';
     
-              echo '<option value="">' . __( 'unit', 'option-tree' ) . '</option>';
+              echo '<option value="">' . __( 'unit', 'karisma_text_domain' ) . '</option>';
     
               foreach ( ot_recognized_dimension_unit_types( $field_id ) as $unit ) {
                 echo '<option value="' . esc_attr( $unit ) . '"' . ( isset( $field_value['unit'] ) ? selected( $field_value['unit'], $unit, false ) : '' ) . '>' . esc_attr( $unit ) . '</option>';
@@ -1156,15 +1156,15 @@ if ( ! function_exists( 'ot_type_gallery' ) ) {
           
           echo '
           <div class="ot-gallery-buttons">
-            <a href="#" class="option-tree-ui-button button button-secondary hug-left ot-gallery-delete">' . __( 'Delete Gallery', 'option-tree' ) . '</a>
-            <a href="#" class="option-tree-ui-button button button-primary right hug-right ot-gallery-edit">' . __( 'Edit Gallery', 'option-tree' ) . '</a>
+            <a href="#" class="option-tree-ui-button button button-secondary hug-left ot-gallery-delete">' . __( 'Delete Gallery', 'karisma_text_domain' ) . '</a>
+            <a href="#" class="option-tree-ui-button button button-primary right hug-right ot-gallery-edit">' . __( 'Edit Gallery', 'karisma_text_domain' ) . '</a>
           </div>';
         
         } else {
         
           echo '
           <div class="ot-gallery-buttons">
-            <a href="#" class="option-tree-ui-button button button-primary right hug-right ot-gallery-edit">' . __( 'Create Gallery', 'option-tree' ) . '</a>
+            <a href="#" class="option-tree-ui-button button button-primary right hug-right ot-gallery-edit">' . __( 'Create Gallery', 'karisma_text_domain' ) . '</a>
           </div>';
         
         }
@@ -1229,9 +1229,9 @@ if ( ! function_exists( 'ot_type_google_fonts' ) ) {
             /* build font family */
             $family = isset( $value['family'] ) ? $value['family'] : '';
             echo '<div class="option-tree-google-font-family">';
-              echo '<a href="javascript:void(0);" class="js-remove-google-font option-tree-ui-button button button-secondary light" title="' . __( 'Remove Google Font', 'option-tree' ) . '"><span class="icon ot-icon-minus-circle"/>' . __( 'Remove Google Font', 'option-tree' ) . '</a>';
+              echo '<a href="javascript:void(0);" class="js-remove-google-font option-tree-ui-button button button-secondary light" title="' . __( 'Remove Google Font', 'karisma_text_domain' ) . '"><span class="icon ot-icon-minus-circle"/>' . __( 'Remove Google Font', 'karisma_text_domain' ) . '</a>';
               echo '<select name="' . esc_attr( $field_name ) . '[' . $key . '][family]" id="' . esc_attr( $field_id ) . '-' . $key . '" class="option-tree-ui-select ' . esc_attr( $field_class ) . '">';
-                echo '<option value="">' . __( '-- Choose One --', 'option-tree' ) . '</option>';
+                echo '<option value="">' . __( '-- Choose One --', 'karisma_text_domain' ) . '</option>';
                 foreach ( ot_recognized_google_font_families( $field_id ) as $family_key => $family_value ) {
                   echo '<option value="' . esc_attr( $family_key ) . '" ' . selected( $family, $family_key, false ) . '>' . esc_html( $family_value ) . '</option>';
                 }
@@ -1272,9 +1272,9 @@ if ( ! function_exists( 'ot_type_google_fonts' ) ) {
         
           /* build font family */
           echo '<div class="option-tree-google-font-family">';
-            echo '<a href="javascript:void(0);" class="js-remove-google-font option-tree-ui-button button button-secondary light" title="' . __( 'Remove Google Font', 'option-tree' ) . '"><span class="icon ot-icon-minus-circle"/>' . __( 'Remove Google Font', 'option-tree' ) . '</a>';
+            echo '<a href="javascript:void(0);" class="js-remove-google-font option-tree-ui-button button button-secondary light" title="' . __( 'Remove Google Font', 'karisma_text_domain' ) . '"><span class="icon ot-icon-minus-circle"/>' . __( 'Remove Google Font', 'karisma_text_domain' ) . '</a>';
             echo '<select name="' . esc_attr( $field_name ) . '[%key%][family]" id="' . esc_attr( $field_id ) . '-%key%" class="option-tree-ui-select ' . esc_attr( $field_class ) . '">';
-              echo '<option value="">' . __( '-- Choose One --', 'option-tree' ) . '</option>';
+              echo '<option value="">' . __( '-- Choose One --', 'karisma_text_domain' ) . '</option>';
               foreach ( ot_recognized_google_font_families( $field_id ) as $family_key => $family_value ) {
                 echo '<option value="' . esc_attr( $family_key ) . '">' . esc_html( $family_value ) . '</option>';
               }
@@ -1295,7 +1295,7 @@ if ( ! function_exists( 'ot_type_google_fonts' ) ) {
         
         echo '</div>';
         
-        echo '<a href="javascript:void(0);" class="js-add-google-font option-tree-ui-button button button-primary right hug-right" title="' . __( 'Add Google Font', 'option-tree' ) . '">' . __( 'Add Google Font', 'option-tree' ) . '</a>';
+        echo '<a href="javascript:void(0);" class="js-add-google-font option-tree-ui-button button button-primary right hug-right" title="' . __( 'Add Google Font', 'karisma_text_domain' ) . '">' . __( 'Add Google Font', 'karisma_text_domain' ) . '</a>';
         
       echo '</div>';
       
@@ -1381,11 +1381,11 @@ if ( ! function_exists( 'ot_type_link_color' ) ) {
 
         /* allow fields to be filtered */
         $ot_recognized_link_color_fields = apply_filters( 'ot_recognized_link_color_fields', array(
-          'link'    => _x( 'Standard', 'color picker', 'option-tree' ),
-          'hover'   => _x( 'Hover', 'color picker', 'option-tree' ),
-          'active'  => _x( 'Active', 'color picker', 'option-tree' ),
-          'visited' => _x( 'Visited', 'color picker', 'option-tree' ),
-          'focus'   => _x( 'Focus', 'color picker', 'option-tree' )
+          'link'    => _x( 'Standard', 'color picker', 'karisma_text_domain' ),
+          'hover'   => _x( 'Hover', 'color picker', 'karisma_text_domain' ),
+          'active'  => _x( 'Active', 'color picker', 'karisma_text_domain' ),
+          'visited' => _x( 'Visited', 'color picker', 'karisma_text_domain' ),
+          'focus'   => _x( 'Focus', 'color picker', 'karisma_text_domain' )
         ), $field_id );
 
         /* build link color fields */
@@ -1494,10 +1494,10 @@ if ( ! function_exists( 'ot_type_list_item' ) ) {
         echo '</ul>';
         
         /* button */
-        echo '<a href="javascript:void(0);" class="option-tree-list-item-add option-tree-ui-button button button-primary right hug-right" title="' . __( 'Add New', 'option-tree' ) . '">' . __( 'Add New', 'option-tree' ) . '</a>';
+        echo '<a href="javascript:void(0);" class="option-tree-list-item-add option-tree-ui-button button button-primary right hug-right" title="' . __( 'Add New', 'karisma_text_domain' ) . '">' . __( 'Add New', 'karisma_text_domain' ) . '</a>';
         
         /* description */
-        $list_desc = $sortable ? __( 'You can re-order with drag & drop, the order will update after saving.', 'option-tree' ) : '';
+        $list_desc = $sortable ? __( 'You can re-order with drag & drop, the order will update after saving.', 'karisma_text_domain' ) : '';
         echo '<div class="list-item-description">' . apply_filters( 'ot_list_item_description', $list_desc, $field_id ) . '</div>';
       
       echo '</div>';
@@ -1547,7 +1547,7 @@ if ( ! function_exists( 'ot_type_measurement' ) ) {
         /* build measurement */
         echo '<select name="' . esc_attr( $field_name ) . '[1]" id="' . esc_attr( $field_id ) . '-1" class="option-tree-ui-select ' . esc_attr( $field_class ) . '">';
           
-          echo '<option value="">' . __( 'unit', 'option-tree' ) . '</option>';
+          echo '<option value="">' . __( 'unit', 'karisma_text_domain' ) . '</option>';
           
           foreach ( ot_measurement_unit_types( $field_id ) as $unit ) {
             echo '<option value="' . esc_attr( $unit ) . '"' . ( isset( $field_value[1] ) ? selected( $field_value[1], $unit, false ) : '' ) . '>' . esc_attr( $unit ) . '</option>';
@@ -1667,7 +1667,7 @@ if ( ! function_exists( 'ot_type_on_off' ) ) {
              * @param string $field_id The field ID.
              * @param string $filter_id For filtering both on/off label with one function.
              */
-            'label'   => apply_filters( 'ot_on_off_switch_on_label', __( 'On', 'option-tree' ), $field_id, 'on' )
+            'label'   => apply_filters( 'ot_on_off_switch_on_label', __( 'On', 'karisma_text_domain' ), $field_id, 'on' )
           ),
           array(
             /**
@@ -1689,7 +1689,7 @@ if ( ! function_exists( 'ot_type_on_off' ) ) {
              * @param string $field_id The field ID.
              * @param string $filter_id For filtering both on/off label with one function.
              */
-            'label'   => apply_filters( 'ot_on_off_switch_off_label', __( 'Off', 'option-tree' ), $field_id, 'off' )
+            'label'   => apply_filters( 'ot_on_off_switch_off_label', __( 'Off', 'karisma_text_domain' ), $field_id, 'off' )
           )
         );
 
@@ -1767,7 +1767,7 @@ if ( ! function_exists( 'ot_type_page_checkbox' ) ) {
           echo '</p>';
         }
       } else {
-        echo '<p>' . __( 'No Pages Found', 'option-tree' ) . '</p>';
+        echo '<p>' . __( 'No Pages Found', 'karisma_text_domain' ) . '</p>';
       }
       
       echo '</div>';
@@ -1816,13 +1816,13 @@ if ( ! function_exists( 'ot_type_page_select' ) ) {
         
         /* has pages */
         if ( is_array( $my_posts ) && ! empty( $my_posts ) ) {
-          echo '<option value="">-- ' . __( 'Choose One', 'option-tree' ) . ' --</option>';
+          echo '<option value="">-- ' . __( 'Choose One', 'karisma_text_domain' ) . ' --</option>';
           foreach( $my_posts as $my_post ) {
             $post_title = '' != $my_post->post_title ? $my_post->post_title : 'Untitled';
             echo '<option value="' . esc_attr( $my_post->ID ) . '"' . selected( $field_value, $my_post->ID, false ) . '>' . $post_title . '</option>';
           }
         } else {
-          echo '<option value="">' . __( 'No Pages Found', 'option-tree' ) . '</option>';
+          echo '<option value="">' . __( 'No Pages Found', 'karisma_text_domain' ) . '</option>';
         }
         
         echo '</select>';
@@ -1878,7 +1878,7 @@ if ( ! function_exists( 'ot_type_post_checkbox' ) ) {
             echo '</p>';
           } 
         } else {
-          echo '<p>' . __( 'No Posts Found', 'option-tree' ) . '</p>';
+          echo '<p>' . __( 'No Posts Found', 'karisma_text_domain' ) . '</p>';
         }
         
       echo '</div>';
@@ -1927,13 +1927,13 @@ if ( ! function_exists( 'ot_type_post_select' ) ) {
         
         /* has posts */
         if ( is_array( $my_posts ) && ! empty( $my_posts ) ) {
-          echo '<option value="">-- ' . __( 'Choose One', 'option-tree' ) . ' --</option>';
+          echo '<option value="">-- ' . __( 'Choose One', 'karisma_text_domain' ) . ' --</option>';
           foreach( $my_posts as $my_post ) {
             $post_title = '' != $my_post->post_title ? $my_post->post_title : 'Untitled';
             echo '<option value="' . esc_attr( $my_post->ID ) . '"' . selected( $field_value, $my_post->ID, false ) . '>' . $post_title . '</option>';
           }
         } else {
-          echo '<option value="">' . __( 'No Posts Found', 'option-tree' ) . '</option>';
+          echo '<option value="">' . __( 'No Posts Found', 'karisma_text_domain' ) . '</option>';
         }
         
         echo '</select>';
@@ -2166,12 +2166,12 @@ if ( ! function_exists( 'ot_type_sidebar_select' ) ) {
 
         /* has sidebars */
         if ( count( $sidebars ) ) {
-          echo '<option value="">-- ' . __( 'Choose Sidebar', 'option-tree' ) . ' --</option>';
+          echo '<option value="">-- ' . __( 'Choose Sidebar', 'karisma_text_domain' ) . ' --</option>';
           foreach ( $sidebars as $id => $sidebar ) {
             echo '<option value="' . esc_attr( $id ) . '"' . selected( $field_value, $id, false ) . '>' . esc_attr( $sidebar ) . '</option>';
           }
         } else {
-          echo '<option value="">' . __( 'No Sidebars', 'option-tree' ) . '</option>';
+          echo '<option value="">' . __( 'No Sidebars', 'karisma_text_domain' ) . '</option>';
         }
         
         echo '</select>';
@@ -2243,10 +2243,10 @@ if ( ! function_exists( 'ot_type_slider' ) ) {
         echo '</ul>';
         
         /* button */
-        echo '<a href="javascript:void(0);" class="option-tree-list-item-add option-tree-ui-button button button-primary right hug-right" title="' . __( 'Add New', 'option-tree' ) . '">' . __( 'Add New', 'option-tree' ) . '</a>';
+        echo '<a href="javascript:void(0);" class="option-tree-list-item-add option-tree-ui-button button button-primary right hug-right" title="' . __( 'Add New', 'karisma_text_domain' ) . '">' . __( 'Add New', 'karisma_text_domain' ) . '</a>';
         
         /* description */
-        echo '<div class="list-item-description">' . __( 'You can re-order with drag & drop, the order will update after saving.', 'option-tree' ) . '</div>';
+        echo '<div class="list-item-description">' . __( 'You can re-order with drag & drop, the order will update after saving.', 'karisma_text_domain' ) . '</div>';
       
       echo '</div>';
 
@@ -2279,87 +2279,87 @@ if ( ! function_exists( 'ot_type_social_links' ) ) {
       
       $field_value = apply_filters( 'ot_type_social_links_defaults', array(
         array(
-          'name'    => __( 'Facebook', 'option-tree' ),
+          'name'    => __( 'Facebook', 'karisma_text_domain' ),
           'title'   => '',
           'href'    => ''
         ),
         array(
-          'name'    => __( 'Twitter', 'option-tree' ),
+          'name'    => __( 'Twitter', 'karisma_text_domain' ),
           'title'   => '',
           'href'    => ''
         ),
         array(
-          'name'    => __( 'Google+', 'option-tree' ),
+          'name'    => __( 'Google+', 'karisma_text_domain' ),
           'title'   => '',
           'href'    => ''
         ),
         array(
-          'name'    => __( 'LinkedIn', 'option-tree' ),
+          'name'    => __( 'LinkedIn', 'karisma_text_domain' ),
           'title'   => '',
           'href'    => ''
         ),
         array(
-          'name'    => __( 'Pinterest', 'option-tree' ),
+          'name'    => __( 'Pinterest', 'karisma_text_domain' ),
           'title'   => '',
           'href'    => ''
         ),
         array(
-          'name'    => __( 'Youtube', 'option-tree' ),
+          'name'    => __( 'Youtube', 'karisma_text_domain' ),
           'title'   => '',
           'href'    => ''
         ),
         array(
-          'name'    => __( 'Dribbble', 'option-tree' ),
+          'name'    => __( 'Dribbble', 'karisma_text_domain' ),
           'title'   => '',
           'href'    => ''
         ),
         array(
-          'name'    => __( 'Github', 'option-tree' ),
+          'name'    => __( 'Github', 'karisma_text_domain' ),
           'title'   => '',
           'href'    => ''
         ),
         array(
-          'name'    => __( 'Forrst', 'option-tree' ),
+          'name'    => __( 'Forrst', 'karisma_text_domain' ),
           'title'   => '',
           'href'    => ''
         ),
         array(
-          'name'    => __( 'Digg', 'option-tree' ),
+          'name'    => __( 'Digg', 'karisma_text_domain' ),
           'title'   => '',
           'href'    => ''
         ),
         array(
-          'name'    => __( 'Delicious', 'option-tree' ),
+          'name'    => __( 'Delicious', 'karisma_text_domain' ),
           'title'   => '',
           'href'    => ''
         ),
         array(
-          'name'    => __( 'Tumblr', 'option-tree' ),
+          'name'    => __( 'Tumblr', 'karisma_text_domain' ),
           'title'   => '',
           'href'    => ''
         ),
         array(
-          'name'    => __( 'Skype', 'option-tree' ),
+          'name'    => __( 'Skype', 'karisma_text_domain' ),
           'title'   => '',
           'href'    => ''
         ),
         array(
-          'name'    => __( 'SoundCloud', 'option-tree' ),
+          'name'    => __( 'SoundCloud', 'karisma_text_domain' ),
           'title'   => '',
           'href'    => ''
         ),
         array(
-          'name'    => __( 'Vimeo', 'option-tree' ),
+          'name'    => __( 'Vimeo', 'karisma_text_domain' ),
           'title'   => '',
           'href'    => ''
         ),
         array(
-          'name'    => __( 'Flickr', 'option-tree' ),
+          'name'    => __( 'Flickr', 'karisma_text_domain' ),
           'title'   => '',
           'href'    => ''
         ),
         array(
-          'name'    => __( 'VK.com', 'option-tree' ),
+          'name'    => __( 'VK.com', 'karisma_text_domain' ),
           'title'   => '',
           'href'    => ''
         )
@@ -2408,10 +2408,10 @@ if ( ! function_exists( 'ot_type_social_links' ) ) {
         echo '</ul>';
         
         /* button */
-        echo '<a href="javascript:void(0);" class="option-tree-social-links-add option-tree-ui-button button button-primary right hug-right" title="' . __( 'Add New', 'option-tree' ) . '">' . __( 'Add New', 'option-tree' ) . '</a>';
+        echo '<a href="javascript:void(0);" class="option-tree-social-links-add option-tree-ui-button button button-primary right hug-right" title="' . __( 'Add New', 'karisma_text_domain' ) . '">' . __( 'Add New', 'karisma_text_domain' ) . '</a>';
         
         /* description */
-        echo '<div class="list-item-description">' . apply_filters( 'ot_social_links_description', __( 'You can re-order with drag & drop, the order will update after saving.', 'option-tree' ), $field_id ) . '</div>';
+        echo '<div class="list-item-description">' . apply_filters( 'ot_social_links_description', __( 'You can re-order with drag & drop, the order will update after saving.', 'karisma_text_domain' ), $field_id ) . '</div>';
       
       echo '</div>';
 
@@ -2465,7 +2465,7 @@ if ( ! function_exists( 'ot_type_spacing' ) ) {
 
           $top = isset( $field_value['top'] ) ? esc_attr( $field_value['top'] ) : '';
 
-          echo '<div class="ot-option-group"><span class="ot-icon-arrow-up ot-option-group--icon"></span><input type="text" name="' . esc_attr( $field_name ) . '[top]" id="' . esc_attr( $field_id ) . '-top" value="' . $top . '" class="widefat option-tree-ui-input ' . esc_attr( $field_class ) . '" placeholder="' . __( 'top', 'option-tree' ) . '" /></div>';
+          echo '<div class="ot-option-group"><span class="ot-icon-arrow-up ot-option-group--icon"></span><input type="text" name="' . esc_attr( $field_name ) . '[top]" id="' . esc_attr( $field_id ) . '-top" value="' . $top . '" class="widefat option-tree-ui-input ' . esc_attr( $field_class ) . '" placeholder="' . __( 'top', 'karisma_text_domain' ) . '" /></div>';
 
         }
 
@@ -2474,7 +2474,7 @@ if ( ! function_exists( 'ot_type_spacing' ) ) {
 
           $right = isset( $field_value['right'] ) ? esc_attr( $field_value['right'] ) : '';
 
-          echo '<div class="ot-option-group"><span class="ot-icon-arrow-right ot-option-group--icon"></span></span><input type="text" name="' . esc_attr( $field_name ) . '[right]" id="' . esc_attr( $field_id ) . '-right" value="' . $right . '" class="widefat option-tree-ui-input ' . esc_attr( $field_class ) . '" placeholder="' . __( 'right', 'option-tree' ) . '" /></div>';
+          echo '<div class="ot-option-group"><span class="ot-icon-arrow-right ot-option-group--icon"></span></span><input type="text" name="' . esc_attr( $field_name ) . '[right]" id="' . esc_attr( $field_id ) . '-right" value="' . $right . '" class="widefat option-tree-ui-input ' . esc_attr( $field_class ) . '" placeholder="' . __( 'right', 'karisma_text_domain' ) . '" /></div>';
 
         }
 
@@ -2483,7 +2483,7 @@ if ( ! function_exists( 'ot_type_spacing' ) ) {
 
           $bottom = isset( $field_value['bottom'] ) ? esc_attr( $field_value['bottom'] ) : '';
 
-          echo '<div class="ot-option-group"><span class="ot-icon-arrow-down ot-option-group--icon"></span><input type="text" name="' . esc_attr( $field_name ) . '[bottom]" id="' . esc_attr( $field_id ) . '-bottom" value="' . $bottom . '" class="widefat option-tree-ui-input ' . esc_attr( $field_class ) . '" placeholder="' . __( 'bottom', 'option-tree' ) . '" /></div>';
+          echo '<div class="ot-option-group"><span class="ot-icon-arrow-down ot-option-group--icon"></span><input type="text" name="' . esc_attr( $field_name ) . '[bottom]" id="' . esc_attr( $field_id ) . '-bottom" value="' . $bottom . '" class="widefat option-tree-ui-input ' . esc_attr( $field_class ) . '" placeholder="' . __( 'bottom', 'karisma_text_domain' ) . '" /></div>';
 
         }
 
@@ -2492,7 +2492,7 @@ if ( ! function_exists( 'ot_type_spacing' ) ) {
 
           $left = isset( $field_value['left'] ) ? esc_attr( $field_value['left'] ) : '';
 
-          echo '<div class="ot-option-group"><span class="ot-icon-arrow-left ot-option-group--icon"></span><input type="text" name="' . esc_attr( $field_name ) . '[left]" id="' . esc_attr( $field_id ) . '-left" value="' . $left . '" class="widefat option-tree-ui-input ' . esc_attr( $field_class ) . '" placeholder="' . __( 'left', 'option-tree' ) . '" /></div>';
+          echo '<div class="ot-option-group"><span class="ot-icon-arrow-left ot-option-group--icon"></span><input type="text" name="' . esc_attr( $field_name ) . '[left]" id="' . esc_attr( $field_id ) . '-left" value="' . $left . '" class="widefat option-tree-ui-input ' . esc_attr( $field_class ) . '" placeholder="' . __( 'left', 'karisma_text_domain' ) . '" /></div>';
 
         }
 
@@ -2503,7 +2503,7 @@ if ( ! function_exists( 'ot_type_spacing' ) ) {
         
           echo '<select name="' . esc_attr( $field_name ) . '[unit]" id="' . esc_attr( $field_id ) . '-unit" class="option-tree-ui-select ' . esc_attr( $field_class ) . '">';
   
-            echo '<option value="">' . __( 'unit', 'option-tree' ) . '</option>';
+            echo '<option value="">' . __( 'unit', 'karisma_text_domain' ) . '</option>';
   
             foreach ( ot_recognized_spacing_unit_types( $field_id ) as $unit ) {
               echo '<option value="' . esc_attr( $unit ) . '"' . ( isset( $field_value['unit'] ) ? selected( $field_value['unit'], $unit, false ) : '' ) . '>' . esc_attr( $unit ) . '</option>';
@@ -2594,7 +2594,7 @@ if ( ! function_exists( 'ot_type_tag_checkbox' ) ) {
             echo '</p>';
           } 
         } else {
-          echo '<p>' . __( 'No Tags Found', 'option-tree' ) . '</p>';
+          echo '<p>' . __( 'No Tags Found', 'karisma_text_domain' ) . '</p>';
         }
         
       echo '</div>';
@@ -2643,12 +2643,12 @@ if ( ! function_exists( 'ot_type_tag_select' ) ) {
         
         /* has tags */
         if ( $tags ) {
-          echo '<option value="">-- ' . __( 'Choose One', 'option-tree' ) . ' --</option>';
+          echo '<option value="">-- ' . __( 'Choose One', 'karisma_text_domain' ) . ' --</option>';
           foreach( $tags as $tag ) {
             echo '<option value="' . esc_attr( $tag->term_id ) . '"' . selected( $field_value, $tag->term_id, false ) . '>' . esc_attr( $tag->name ) . '</option>';
           }
         } else {
-          echo '<option value="">' . __( 'No Tags Found', 'option-tree' ) . '</option>';
+          echo '<option value="">' . __( 'No Tags Found', 'karisma_text_domain' ) . '</option>';
         }
         
         echo '</select>';
@@ -2706,7 +2706,7 @@ if ( ! function_exists( 'ot_type_taxonomy_checkbox' ) ) {
             echo '</p>';
           } 
         } else {
-          echo '<p>' . __( 'No Taxonomies Found', 'option-tree' ) . '</p>';
+          echo '<p>' . __( 'No Taxonomies Found', 'karisma_text_domain' ) . '</p>';
         }
         
       echo '</div>';
@@ -2758,12 +2758,12 @@ if ( ! function_exists( 'ot_type_taxonomy_select' ) ) {
         
         /* has tags */
         if ( $taxonomies ) {
-          echo '<option value="">-- ' . __( 'Choose One', 'option-tree' ) . ' --</option>';
+          echo '<option value="">-- ' . __( 'Choose One', 'karisma_text_domain' ) . ' --</option>';
           foreach( $taxonomies as $taxonomy ) {
             echo '<option value="' . esc_attr( $taxonomy->term_id ) . '"' . selected( $field_value, $taxonomy->term_id, false ) . '>' . esc_attr( $taxonomy->name ) . '</option>';
           }
         } else {
-          echo '<option value="">' . __( 'No Taxonomies Found', 'option-tree' ) . '</option>';
+          echo '<option value="">' . __( 'No Taxonomies Found', 'karisma_text_domain' ) . '</option>';
         }
         
         echo '</select>';
@@ -3199,7 +3199,7 @@ if ( ! function_exists( 'ot_type_upload' ) ) {
           echo '<input type="text" name="' . esc_attr( $field_name ) . '" id="' . esc_attr( $field_id ) . '" value="' . esc_attr( $field_value ) . '" class="widefat option-tree-ui-upload-input ' . esc_attr( $field_class ) . '" />';
           
           /* add media button */
-          echo '<a href="javascript:void(0);" class="ot_upload_media option-tree-ui-button button button-primary light" rel="' . $post_id . '" title="' . __( 'Add Media', 'option-tree' ) . '"><span class="icon ot-icon-plus-circle"></span>' . __( 'Add Media', 'option-tree' ) . '</a>';
+          echo '<a href="javascript:void(0);" class="ot_upload_media option-tree-ui-button button button-primary light" rel="' . $post_id . '" title="' . __( 'Add Media', 'karisma_text_domain' ) . '"><span class="icon ot-icon-plus-circle"></span>' . __( 'Add Media', 'karisma_text_domain' ) . '</a>';
         
         echo '</div>';
         
@@ -3215,7 +3215,7 @@ if ( ! function_exists( 'ot_type_upload' ) ) {
             if ( preg_match( '/\.(?:jpe?g|png|gif|ico)$/i', $field_value ) )
               echo '<div class="option-tree-ui-image-wrap"><img src="' . esc_url( $field_value ) . '" alt="" /></div>';
             
-            echo '<a href="javascript:(void);" class="option-tree-ui-remove-media option-tree-ui-button button button-secondary light" title="' . __( 'Remove Media', 'option-tree' ) . '"><span class="icon ot-icon-minus-circle"></span>' . __( 'Remove Media', 'option-tree' ) . '</a>';
+            echo '<a href="javascript:(void);" class="option-tree-ui-remove-media option-tree-ui-button button button-secondary light" title="' . __( 'Remove Media', 'karisma_text_domain' ) . '"><span class="icon ot-icon-minus-circle"></span>' . __( 'Remove Media', 'karisma_text_domain' ) . '</a>';
             
           echo '</div>';
           

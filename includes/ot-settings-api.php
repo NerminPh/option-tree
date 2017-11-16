@@ -259,7 +259,7 @@ if ( ! class_exists( 'OT_Settings' ) ) {
               
               echo ot_alert_message( $page );
               
-              settings_errors( 'option-tree' );
+              settings_errors( 'karisma_text_domain' );
               
               /* Header */
               echo '<div id="option-tree-header-wrap">';
@@ -361,7 +361,7 @@ if ( ! class_exists( 'OT_Settings' ) ) {
         
                   echo '<input type="hidden" name="action" value="reset" />';
                   
-                  echo '<button type="submit" class="option-tree-ui-button button button-secondary left reset-settings" title="' . __( 'Reset Options', 'option-tree' ) . '">' . __( 'Reset Options', 'option-tree' ) . '</button>';
+                  echo '<button type="submit" class="option-tree-ui-button button button-secondary left reset-settings" title="' . __( 'Reset Options', 'karisma_text_domain' ) . '">' . __( 'Reset Options', 'karisma_text_domain' ) . '</button>';
                 
                 echo '</form>';
                 
@@ -607,7 +607,7 @@ if ( ! class_exists( 'OT_Settings' ) ) {
                 $required_setting = array(
                   array(
                     'id'        => 'title',
-                    'label'     => __( 'Title', 'option-tree' ),
+                    'label'     => __( 'Title', 'karisma_text_domain' ),
                     'desc'      => '',
                     'std'       => '',
                     'type'      => 'text',

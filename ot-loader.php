@@ -19,7 +19,7 @@ if ( class_exists( 'OT_Loader' ) && defined( 'OT_PLUGIN_MODE' ) && OT_PLUGIN_MOD
   
   function ot_conflict_notice() {
     
-    echo '<div class="error"><p>' . __( 'OptionTree is installed as a plugin and also embedded in your current theme. Please deactivate the plugin to load the theme dependent version of OptionTree, and remove this warning.', 'option-tree' ) . '</p></div>';
+    echo '<div class="error"><p>' . __( 'OptionTree is installed as a plugin and also embedded in your current theme. Please deactivate the plugin to load the theme dependent version of OptionTree, and remove this warning.', 'karisma_text_domain' ) . '</p></div>';
     
   }
   
@@ -67,7 +67,7 @@ if ( ! class_exists( 'OT_Loader' ) ) {
      * @since     2.1.3
      */
     private function load_languages() {
-    
+      
       /**
        * A quick check to see if we're in plugin mode.
        *
@@ -88,9 +88,9 @@ if ( ! class_exists( 'OT_Loader' ) ) {
         define( 'OT_LANG_DIR', trailingslashit( dirname( plugin_basename( __FILE__ ) ) ) . trailingslashit( 'languages' ) );
         
       } else {
-      
-        if ( apply_filters( 'ot_child_theme_mode', false ) == true ) {
         
+        if ( apply_filters( 'ot_child_theme_mode', false ) == true ) {
+          
           $path = @explode( get_stylesheet(), str_replace( '\\', '/', dirname( __FILE__ ) ) );
           $path = ltrim( end( $path ), '/' );
           define( 'OT_LANG_DIR', trailingslashit( trailingslashit( get_stylesheet_directory() ) . $path ) . trailingslashit( 'languages' ) . 'theme-mode' );
@@ -102,16 +102,16 @@ if ( ! class_exists( 'OT_Loader' ) ) {
           define( 'OT_LANG_DIR', trailingslashit( trailingslashit( get_template_directory() ) . $path ) . trailingslashit( 'languages' ) . 'theme-mode' );
           
         }
-      
+        
       }
 
       /* load the text domain  */
       if ( OT_PLUGIN_MODE ) {
-      
+        
         add_action( 'plugins_loaded', array( $this, 'load_textdomain' ) );
         
       } else {
-      
+        
         add_action( 'after_setup_theme', array( $this, 'load_textdomain' ) );
         
       }
@@ -127,14 +127,14 @@ if ( ! class_exists( 'OT_Loader' ) ) {
      * @since     2.0
      */
     public function load_textdomain() {
-    
-      if ( OT_PLUGIN_MODE ) {
       
-        load_plugin_textdomain( 'option-tree', false, OT_LANG_DIR );
+      if ( OT_PLUGIN_MODE ) {
+        
+        load_plugin_textdomain( 'karisma_text_domain', false, OT_LANG_DIR );
         
       } else {
-      
-        load_theme_textdomain( 'option-tree', OT_LANG_DIR );
+        
+        load_theme_textdomain( 'karisma_text_domain', OT_LANG_DIR );
         
       }
       
@@ -150,7 +150,7 @@ if ( ! class_exists( 'OT_Loader' ) ) {
      * @since     2.1.2
      */
     public function load_option_tree() {
-    
+      
       /* setup the constants */
       $this->constants();
       
@@ -322,12 +322,12 @@ if ( ! class_exists( 'OT_Loader' ) ) {
         define( 'OT_URL', plugin_dir_url( __FILE__ ) );
       } else {
         if ( true == OT_CHILD_THEME_MODE ) {
-          $path = ltrim( end( @explode( get_stylesheet(), str_replace( '\\', '/', dirname( __FILE__ ) ) ) ), '/' );
-          define( 'OT_DIR', trailingslashit( trailingslashit( get_stylesheet_directory() ) . $path ) );
+          $path = @explode( get_stylesheet(), str_replace( '\\', '/', dirname( __FILE__ ) ) );
+          $path = ltrim( end( $path ), '/' );          define( 'OT_DIR', trailingslashit( trailingslashit( get_stylesheet_directory() ) . $path ) );
           define( 'OT_URL', trailingslashit( trailingslashit( get_stylesheet_directory_uri() ) . $path ) );
         } else {
-          $path = ltrim( end( @explode( get_template(), str_replace( '\\', '/', dirname( __FILE__ ) ) ) ), '/' );
-          define( 'OT_DIR', trailingslashit( trailingslashit( get_template_directory() ) . $path ) );
+          $path = @explode( get_template(), str_replace( '\\', '/', dirname( __FILE__ ) ) );
+          $path = ltrim( end( $path ), '/' );          define( 'OT_DIR', trailingslashit( trailingslashit( get_template_directory() ) . $path ) );
           define( 'OT_URL', trailingslashit( trailingslashit( get_template_directory_uri() ) . $path ) );
         }
       }
@@ -367,7 +367,7 @@ if ( ! class_exists( 'OT_Loader' ) ) {
         'ot-functions-option-types',
         'ot-functions-compat',
         'ot-settings-api'
-      );
+        );
       
       /* include the meta box api */
       if ( OT_META_BOXES == true ) {
@@ -418,11 +418,11 @@ if ( ! class_exists( 'OT_Loader' ) ) {
      * @since     2.0
      */
     private function includes() {
-    
+      
       $files = array( 
         'ot-functions',
         'ot-functions-deprecated'
-      );
+        );
 
       /* require the files */
       foreach ( $files as $file ) {
@@ -455,15 +455,15 @@ if ( ! class_exists( 'OT_Loader' ) ) {
 
       /* load the Meta Box assets */
       if ( OT_META_BOXES == true ) {
-      
+        
         /* add scripts for metaboxes to post-new.php & post.php */
         add_action( 'admin_print_scripts-post-new.php', 'ot_admin_scripts', 11 );
         add_action( 'admin_print_scripts-post.php', 'ot_admin_scripts', 11 );
-              
+        
         /* add styles for metaboxes to post-new.php & post.php */
         add_action( 'admin_print_styles-post-new.php', 'ot_admin_styles', 11 );
         add_action( 'admin_print_styles-post.php', 'ot_admin_styles', 11 );
-      
+        
       }
       
       /* Adds the Theme Option page to the admin bar */
@@ -495,7 +495,7 @@ if ( ! class_exists( 'OT_Loader' ) ) {
 
       /* Google Fonts front-end CSS */
       add_action( 'wp_enqueue_scripts', 'ot_load_google_fonts_css', 1 );
- 
+      
       /* dynamic front-end CSS */
       add_action( 'wp_enqueue_scripts', 'ot_load_dynamic_css', 999 );
 
@@ -531,7 +531,7 @@ if ( ! class_exists( 'OT_Loader' ) ) {
       
       // Adds the temporary hacktastic shortcode
       add_filter( 'media_view_settings', array( $this, 'shortcode' ), 10, 2 );
-    
+      
       // AJAX update
       add_action( 'wp_ajax_gallery_update', array( $this, 'ajax_gallery_update' ) );
       
@@ -567,45 +567,45 @@ if ( ! class_exists( 'OT_Loader' ) ) {
       if ( ! $wp_38plus ) {
         $wp_38minus = '
         #adminmenu #toplevel_page_ot-settings .menu-icon-generic div.wp-menu-image {
-          background: none;
-        }
-        #adminmenu #toplevel_page_ot-settings .menu-icon-generic div.wp-menu-image:before {
-          padding-left: 6px;
-        }';
+        background: none;
       }
+        #adminmenu #toplevel_page_ot-settings .menu-icon-generic div.wp-menu-image:before {
+      padding-left: 6px;
+    }';
+  }
 
-      echo '
-      <style>
-        @font-face {
-          font-family: "option-tree-font";
-          src:url("' . OT_URL . 'assets/fonts/option-tree-font.eot");
-          src:url("' . OT_URL . 'assets/fonts/option-tree-font.eot?#iefix") format("embedded-opentype"),
-            url("' . OT_URL . 'assets/fonts/option-tree-font.woff") format("woff"),
-            url("' . OT_URL . 'assets/fonts/option-tree-font.ttf") format("truetype"),
-            url("' . OT_URL . 'assets/fonts/option-tree-font.svg#option-tree-font") format("svg");
-          font-weight: normal;
-          font-style: normal;
-        }
-        #adminmenu #toplevel_page_ot-settings .menu-icon-generic div.wp-menu-image:before {
-          font: normal ' . $fontsize . '/1 "option-tree-font" !important;
-          speak: none;
-          padding: 6px 0;
-          height: 34px;
-          width: 20px;
-          display: inline-block;
-          -webkit-font-smoothing: antialiased;
-          -moz-osx-font-smoothing: grayscale;
-          -webkit-transition: all .1s ease-in-out;
-          -moz-transition:    all .1s ease-in-out;
-          transition:         all .1s ease-in-out;
-        }
-        #adminmenu #toplevel_page_ot-settings .menu-icon-generic div.wp-menu-image:before {
-          content: "\e785";
-        }'  . $wp_38minus . '
-      </style>
-      ';
+  echo '
+  <style>
+    @font-face {
+      font-family: "option-tree-font";
+      src:url("' . OT_URL . 'assets/fonts/option-tree-font.eot");
+      src:url("' . OT_URL . 'assets/fonts/option-tree-font.eot?#iefix") format("embedded-opentype"),
+      url("' . OT_URL . 'assets/fonts/option-tree-font.woff") format("woff"),
+      url("' . OT_URL . 'assets/fonts/option-tree-font.ttf") format("truetype"),
+      url("' . OT_URL . 'assets/fonts/option-tree-font.svg#option-tree-font") format("svg");
+      font-weight: normal;
+      font-style: normal;
     }
-    
+        #adminmenu #toplevel_page_ot-settings .menu-icon-generic div.wp-menu-image:before {
+    font: normal ' . $fontsize . '/1 "option-tree-font" !important;
+    speak: none;
+    padding: 6px 0;
+    height: 34px;
+    width: 20px;
+    display: inline-block;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-transition: all .1s ease-in-out;
+    -moz-transition:    all .1s ease-in-out;
+    transition:         all .1s ease-in-out;
+  }
+        #adminmenu #toplevel_page_ot-settings .menu-icon-generic div.wp-menu-image:before {
+  content: "\e785";
+}'  . $wp_38minus . '
+</style>
+';
+}
+
     /**
      * AJAX utility function for adding a new section.
      */
@@ -705,7 +705,7 @@ if ( ! class_exists( 'OT_Loader' ) ) {
       // No ID return settings
       if ( $settings['post']['id'] == 0 )
         return $settings;
-  
+      
       // Set the fake shortcode
       $settings['ot_gallery'] = array( 'shortcode' => "[gallery id='{$settings['post']['id']}']" );
       
@@ -723,13 +723,13 @@ if ( ! class_exists( 'OT_Loader' ) ) {
      * @since     2.2.0
      */
     public function ajax_gallery_update() {
-    
+      
       if ( ! empty( $_POST['ids'] ) )  {
         
         $return = '';
         
         foreach( $_POST['ids'] as $id ) {
-        
+          
           $thumbnail = wp_get_attachment_image_src( $id, 'thumbnail' );
           
           $return .= '<li><img  src="' . $thumbnail[0] . '" width="75" height="75" /></li>';
@@ -738,7 +738,7 @@ if ( ! class_exists( 'OT_Loader' ) ) {
         
         echo $return;
         exit();
-      
+        
       }
       
     }
@@ -760,7 +760,7 @@ if ( ! class_exists( 'OT_Loader' ) ) {
         echo json_encode( array(
           'variants' => ot_recognized_google_font_variants( $_POST['field_id'], $_POST['family'] ),
           'subsets'  => ot_recognized_google_font_subsets( $_POST['field_id'], $_POST['family'] )
-        ) );
+          ) );
         exit();
 
       }
@@ -777,12 +777,12 @@ if ( ! class_exists( 'OT_Loader' ) ) {
      */
     public function change_image_button( $translation, $text, $domain ) {
       global $pagenow;
-    
+      
       if ( $pagenow == apply_filters( 'ot_theme_options_parent_slug', 'themes.php' ) && 'default' == $domain && 'Insert into post' == $text ) {
         
         // Once is enough.
         remove_filter( 'gettext', array( $this, 'ot_change_image_button' ) );
-        return apply_filters( 'ot_upload_text', __( 'Send to OptionTree', 'option-tree' ) );
+        return apply_filters( 'ot_upload_text', __( 'Send to OptionTree', 'karisma_text_domain' ) );
         
       }
       
@@ -794,7 +794,7 @@ if ( ! class_exists( 'OT_Loader' ) ) {
   }
   
   /**
-   * Instantiate the OptionTree loader class.
+   * Instantiate the OptionTre loader class.
    *
    * @since     2.0
    */

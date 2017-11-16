@@ -228,7 +228,7 @@ if ( ! class_exists( 'OT_Meta_Box' ) ) {
             $required_setting = array(
               array(
                 'id'        => 'title',
-                'label'     => __( 'Title', 'option-tree' ),
+                'label'     => __( 'Title', 'karisma_text_domain' ),
                 'desc'      => '',
                 'std'       => '',
                 'type'      => 'text',

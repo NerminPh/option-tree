@@ -66,7 +66,7 @@ if ( ! class_exists( 'OT_Cleanup' ) ) {
 
       $table_name = $wpdb->prefix . 'option_tree';
       $page = isset( $_GET['page'] ) ? $_GET['page'] : '';
-      $ot_maybe_cleanup_posts = count( $wpdb->get_results( "SELECT * FROM $wpdb->posts WHERE post_type = 'option-tree' LIMIT 2" ) ) > 1;
+      $ot_maybe_cleanup_posts = count( $wpdb->get_results( "SELECT * FROM $wpdb->posts WHERE post_type = 'karisma_text_domain' LIMIT 2" ) ) > 1;
       $ot_maybe_cleanup_table = $wpdb->get_var( $wpdb->prepare( "SHOW TABLES LIKE %s", $table_name ) ) == $table_name;
 
       if ( ! $ot_maybe_cleanup_posts && ! $ot_maybe_cleanup_table && $page == 'ot-cleanup' ) {
@@ -81,7 +81,7 @@ if ( ! class_exists( 'OT_Cleanup' ) ) {
 
         $theme_check_bs = 'add_menu_' . 'page';
 
-        $theme_check_bs( apply_filters( 'ot_cleanup_page_title', __( 'OptionTree Cleanup', 'option-tree' ) ), apply_filters( 'ot_cleanup_menu_title', __( 'OptionTree Cleanup', 'option-tree' ) ), 'edit_theme_options', 'ot-cleanup', array( $this, 'options_page' ) );
+        $theme_check_bs( apply_filters( 'ot_cleanup_page_title', __( 'OptionTree Cleanup', 'karisma_text_domain' ) ), apply_filters( 'ot_cleanup_menu_title', __( 'OptionTree Cleanup', 'karisma_text_domain' ) ), 'edit_theme_options', 'ot-cleanup', array( $this, 'options_page' ) );
 
       }
       
@@ -98,7 +98,7 @@ if ( ! class_exists( 'OT_Cleanup' ) ) {
     public function cleanup_notice() {
 
       if ( get_current_screen()->id != 'appearance_page_ot-cleanup' )
-        echo '<div class="update-nag">' . sprintf( __( 'OptionTree has outdated data that should be removed. Please go to %s for more information.', 'option-tree' ), sprintf( '<a href="%s">%s</a>', admin_url( 'themes.php?page=ot-cleanup' ), apply_filters( 'ot_cleanup_menu_title', __( 'OptionTree Cleanup', 'option-tree' ) ) ) ) . '</div>';
+        echo '<div class="update-nag">' . sprintf( __( 'OptionTree has outdated data that should be removed. Please go to %s for more information.', 'karisma_text_domain' ), sprintf( '<a href="%s">%s</a>', admin_url( 'themes.php?page=ot-cleanup' ), apply_filters( 'ot_cleanup_menu_title', __( 'OptionTree Cleanup', 'karisma_text_domain' ) ) ) ) . '</div>';
     
     }
 
@@ -127,23 +127,23 @@ if ( ! class_exists( 'OT_Cleanup' ) ) {
 
       echo '<div class="wrap">';
 
-        echo '<h2>' . apply_filters( 'ot_cleanup_page_title', __( 'OptionTree Cleanup', 'option-tree' ) ) . '</h2>';
+        echo '<h2>' . apply_filters( 'ot_cleanup_page_title', __( 'OptionTree Cleanup', 'karisma_text_domain' ) ) . '</h2>';
 
         if ( $ot_maybe_cleanup_posts ) {
 
-          $posts = $wpdb->get_results( "SELECT * FROM $wpdb->posts WHERE post_type = 'option-tree'" );
+          $posts = $wpdb->get_results( "SELECT * FROM $wpdb->posts WHERE post_type = 'karisma_text_domain'" );
 
-          echo '<h3>' . __( 'Multiple Media Posts', 'option-tree' ) . '</h3>';
+          echo '<h3>' . __( 'Multiple Media Posts', 'karisma_text_domain' ) . '</h3>';
 
-          echo '<p>' . sprintf( __( 'There are currently %s OptionTree media posts in your database. At some point in the past, a version of OptionTree added multiple %s media post objects cluttering up your %s table. There is no associated risk or harm that these posts have caused other than to add size to your overall database. Thankfully, there is a way to remove all these orphaned media posts and get your database cleaned up.', 'option-tree' ), '<code>' . number_format( count( $posts ) ) . '</code>', '<tt>option-tree</tt>', '<tt>' . $wpdb->posts . '</tt>' ) . '</p>';
+          echo '<p>' . sprintf( __( 'There are currently %s OptionTree media posts in your database. At some point in the past, a version of OptionTree added multiple %s media post objects cluttering up your %s table. There is no associated risk or harm that these posts have caused other than to add size to your overall database. Thankfully, there is a way to remove all these orphaned media posts and get your database cleaned up.', 'karisma_text_domain' ), '<code>' . number_format( count( $posts ) ) . '</code>', '<tt>option-tree</tt>', '<tt>' . $wpdb->posts . '</tt>' ) . '</p>';
 
-          echo '<p>' . sprintf( __( 'By clicking the button below, OptionTree will delete %s records and consolidate them into one single OptionTree media post for uploading attachments to. Additionally, the attachments will have their parent ID updated to the correct media post.', 'option-tree' ), '<code>' . number_format( count( $posts ) - 1 ) . '</code>' ) . '</p>';
+          echo '<p>' . sprintf( __( 'By clicking the button below, OptionTree will delete %s records and consolidate them into one single OptionTree media post for uploading attachments to. Additionally, the attachments will have their parent ID updated to the correct media post.', 'karisma_text_domain' ), '<code>' . number_format( count( $posts ) - 1 ) . '</code>' ) . '</p>';
 
-          echo '<p><strong>' . __( 'This could take a while to fully process depending on how many records you have in your database, so please be patient and wait for the script to finish.', 'option-tree' ) . '</strong></p>';
+          echo '<p><strong>' . __( 'This could take a while to fully process depending on how many records you have in your database, so please be patient and wait for the script to finish.', 'karisma_text_domain' ) . '</strong></p>';
 
-          echo $safe_mode ?  '<p>' . sprintf( __( '%s Your server is running in safe mode. Which means this page will automatically reload after deleting %s posts, you can filter this number using %s if your server is having trouble processing that many at one time.', 'option-tree' ), '<strong>Note</strong>:', apply_filters( 'ot_consolidate_posts_reload', 500 ), '<tt>ot_consolidate_posts_reload</tt>' ) . '</p>' : '';
+          echo $safe_mode ?  '<p>' . sprintf( __( '%s Your server is running in safe mode. Which means this page will automatically reload after deleting %s posts, you can filter this number using %s if your server is having trouble processing that many at one time.', 'karisma_text_domain' ), '<strong>Note</strong>:', apply_filters( 'ot_consolidate_posts_reload', 500 ), '<tt>ot_consolidate_posts_reload</tt>' ) . '</p>' : '';
 
-          echo '<p><a class="button button-primary" href="' . wp_nonce_url( admin_url( 'themes.php?page=ot-cleanup' ), 'consolidate-posts' ) . '">' . __( 'Consolidate Posts', 'option-tree' ) . '</a></p>';
+          echo '<p><a class="button button-primary" href="' . wp_nonce_url( admin_url( 'themes.php?page=ot-cleanup' ), 'consolidate-posts' ) . '">' . __( 'Consolidate Posts', 'karisma_text_domain' ) . '</a></p>';
 
           if ( isset( $_GET['_wpnonce'] ) && wp_verify_nonce( $_GET['_wpnonce'], 'consolidate-posts' ) ) {
 
@@ -171,7 +171,7 @@ if ( ! class_exists( 'OT_Cleanup' ) ) {
 
               // Reload script in safe mode
               if ( $safe_mode && $count > apply_filters( 'ot_consolidate_posts_reload', 500 ) ) {
-                echo '<br />' . __( 'Reloading...', 'option-tree' );
+                echo '<br />' . __( 'Reloading...', 'karisma_text_domain' );
                 echo '
                 <script>
                   setTimeout( ot_script_reload, 3000 )
@@ -207,7 +207,7 @@ if ( ! class_exists( 'OT_Cleanup' ) ) {
 
             }
 
-            echo '<br />' . __( 'Clean up script has completed, the page will now reload...', 'option-tree' );
+            echo '<br />' . __( 'Clean up script has completed, the page will now reload...', 'karisma_text_domain' );
 
             echo '
             <script>
@@ -227,21 +227,21 @@ if ( ! class_exists( 'OT_Cleanup' ) ) {
 
           echo $ot_maybe_cleanup_posts ? '<hr />' : '';
 
-          echo '<h3>' . __( 'Outdated Table', 'option-tree' ) . '</h3>';
+          echo '<h3>' . __( 'Outdated Table', 'karisma_text_domain' ) . '</h3>';
 
-          echo '<p>' . sprintf( __( 'If you have upgraded from an old 1.x version of OptionTree at some point, you have an extra %s table in your database that can be removed. It\'s not hurting anything, but does not need to be there. If you want to remove it. Click the button below.', 'option-tree' ), '<tt>' . $table_name . '</tt>' ) . '</p>';
+          echo '<p>' . sprintf( __( 'If you have upgraded from an old 1.x version of OptionTree at some point, you have an extra %s table in your database that can be removed. It\'s not hurting anything, but does not need to be there. If you want to remove it. Click the button below.', 'karisma_text_domain' ), '<tt>' . $table_name . '</tt>' ) . '</p>';
 
-          echo '<p><a class="button button-primary" href="' . wp_nonce_url( admin_url( 'themes.php?page=ot-cleanup' ), 'drop-table' ) . '">' . __( 'Drop Table', 'option-tree' ) . '</a></p>';
+          echo '<p><a class="button button-primary" href="' . wp_nonce_url( admin_url( 'themes.php?page=ot-cleanup' ), 'drop-table' ) . '">' . __( 'Drop Table', 'karisma_text_domain' ) . '</a></p>';
 
           if ( isset( $_GET['_wpnonce'] ) && wp_verify_nonce( $_GET['_wpnonce'], 'drop-table' ) ) {
 
-            echo '<p>' . sprintf( __( 'Deleting the outdated and unused %s table...', 'option-tree' ), '<tt>' . $table_name . '</tt>' ) . '</p>';
+            echo '<p>' . sprintf( __( 'Deleting the outdated and unused %s table...', 'karisma_text_domain' ), '<tt>' . $table_name . '</tt>' ) . '</p>';
 
             $wpdb->query( "DROP TABLE IF EXISTS $table_name" );
 
             if ( $wpdb->get_var( $wpdb->prepare( "SHOW TABLES LIKE %s", $table_name ) ) != $table_name ) {
 
-              echo '<p>' . sprintf( __( 'The %s table has been successfully deleted. The page will now reload...', 'option-tree' ), '<tt>' . $table_name . '</tt>' ) . '</p>';
+              echo '<p>' . sprintf( __( 'The %s table has been successfully deleted. The page will now reload...', 'karisma_text_domain' ), '<tt>' . $table_name . '</tt>' ) . '</p>';
 
               echo '
               <script>
@@ -253,7 +253,7 @@ if ( ! class_exists( 'OT_Cleanup' ) ) {
 
             } else {
 
-              echo '<p>' . sprintf( __( 'Something went wrong. The %s table was not deleted.', 'option-tree' ), '<tt>' . $table_name . '</tt>' ) . '</p>';
+              echo '<p>' . sprintf( __( 'Something went wrong. The %s table was not deleted.', 'karisma_text_domain' ), '<tt>' . $table_name . '</tt>' ) . '</p>';
 
             }
 
